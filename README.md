@@ -2,7 +2,7 @@
 
 Yeti DNS Project was launched in 2015 with a goal to build an experimental, non-production root server testbed that provides an environment where technical and operational experiments can safely be performed without risk to production root server infrastructure. Thanks to the persistent effort of Yeti participants, activites in Yeti DNS Project during the past 3 years reached its goal and provided the community with expereince and better understanding on the capablity and limits of Yeti Root system. The framework of Yeti testbed, experiments performed and operational experiences are well documented in RFC8483. Along with that, intereting areas for future work on Root system are also indentified in RFC8483 which severs as bases for new Charter of Yeti DNS Project.
 
-There some proposals for future work collected from Yeti sponors and participants: 
+There are some proposals for future work collected from Yeti sponors and participants: 
 
 ## Issues on DNS large response in IPv6
 
