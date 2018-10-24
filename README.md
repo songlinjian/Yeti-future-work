@@ -30,7 +30,7 @@ More generally, it is known that DNS is a tree based hierarchical database. Math
 
 It has been  proposed to redefine Yeti as seeking to define technology and practices to allow any organization, from the smallest  company to nations to be self-sufficient in their DNS
 
-## Fault-tolerate Distribution Master Achitecture
+## Fault-tolerant Distribution Master Achitecture
 
 In RFC8483 it is proposed that in future work, it would be interesting to test some technical tools like blockchain to either remove the technical requirement for a central authority over the root or enhance the security and stability of the existing Root.
 
