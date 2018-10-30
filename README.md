@@ -12,8 +12,6 @@ There are two approaches:
 * DNS Transport over TCP [RFC7766] is a Mandatory for Yeti resolver. All Root server adopt [ATR](https://tools.ietf.org/html/draft-song-atr-large-resp-01) to generate a small truncated response in case of fragement dropped in the middle of the path.
 * Enable resolver send DNS queries over TCP or HTTP to allow large DNS response with any difficulty. There is one expired draft mentioned this idea: [song-dnsop-tcp-primingexchange](https://tools.ietf.org/html/draft-song-dnsop-tcp-primingexchange-00) 
 
-With the property of supporting large DNS response, some limits of Root system can be relaxed. One notable exmaple is that the number of root server can be extended as many as the number of regions and countries.   
-
 ## Automatic Software Updates for DNS
 
 One aspect of Yeti experiments shows that it is difficult to trace the status of existing deployed DNS. It is also difficult to update the software to adopt new DNS functions and adapt to new configuration (renubmering of hint). For example, people find it is hard to estimate the readiness of RFC5011 and roll the KSK with more confidence. It is a real notable issue in IoT era, because large scale of IoT sub-resolvers are out of maiantance in very near future.
