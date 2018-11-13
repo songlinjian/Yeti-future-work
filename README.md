@@ -19,7 +19,7 @@ Yeti DNS as a system model has shown the capacity of independence of the root sy
 
 More generally, it is known that DNS is a tree based hierarchical database. Mathematically It has a root node and links between parent-child nodes, referred as to a typical DAG(Directed Acyclic Graph). So any failures and instability of parent nodes will impacts all their child nodes in case of human mistake, malicious attack or even earthquake. The risk of parent-child dependence is inherent in the nature of DNS. It has been  proposed to redefine Yeti as seeking to define technology and practices to allow any organization, from the smallest  company to nations to be self-sufficient in their DNS
 
-There are some related works on this field for reference. For example, DLV (RFC4431) is one example to weaken the parent-child dependency in DNSSEC use case. RFC7706 provide a way to install a local root avoid the dependency of Root sever system. And draft-ietf-dnsop-serve-stale enables recursive resolvers to use stale DNS data to avoid outages when authoritative nameservers cannot be reached to refresh expired data.
+There are some related works on this field for reference. For example, DLV (RFC4431) is one example to weaken the parent-child dependency in DNSSEC use case. RFC7706 provide a way to install a local root to reduce the dependency of Root sever system. And draft-ietf-dnsop-serve-stale enables recursive resolvers to use stale DNS data to avoid outages when authoritative nameservers cannot be reached to refresh expired data.
 
 ## Fault-tolerant Distribution Master Architecture (Distributed DNSSEC)
 
