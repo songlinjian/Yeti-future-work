@@ -21,7 +21,7 @@ More generally, it is known that DNS is a tree based hierarchical database. Math
 
 There are some related works on this field for reference. For example, DLV (RFC4431) is one example to weaken the parent-child dependency in DNSSEC use case. RFC7706 provide a way to install a local root avoid the dependency of Root sever system. And draft-ietf-dnsop-serve-stale enables recursive resolvers to use stale DNS data to avoid outages when authoritative nameservers cannot be reached to refresh expired data.
 
-## Fault-tolerant Distribution Master Architecture
+## Fault-tolerant Distribution Master Architecture (Distributed DNSSEC)
 
 In RFC8483 it is proposed that it would be interesting to test some technical tools like blockchain to either remove the technical requirement for a central authority over the root or enhance the security and stability of the existing Root.
 
