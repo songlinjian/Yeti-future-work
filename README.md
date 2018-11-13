@@ -23,9 +23,9 @@ There are some related works on this field for reference. For exmaple, DLV (RFC4
 
 ## Fault-tolerant Distribution Master Achitecture
 
-In RFC8483 it is proposed that in future work, it would be interesting to test some technical tools like blockchain to either remove the technical requirement for a central authority over the root or enhance the security and stability of the existing Root.
+In RFC8483 it is proposed that it would be interesting to test some technical tools like blockchain to either remove the technical requirement for a central authority over the root or enhance the security and stability of the existing Root.
 
-Return to the previous practice of Yeti Multi-DM, it received expected benefit due to its property of redundancy. However, root operation based on Multi-DM model exposed some issues as well. In a [Yeti blog post](http://yeti-dns.org/yeti/blog/2018/08/13/fault-tolerant-distribution-master-architecture.html), Yeti’s Multi-DM Architecture was revisited. It is inferred that a fault-tolerant property is desired for future Yeti DM architecture. Most specifically, a consensus should be achieved before any signed zone be published among a group of entities. The post introduces the requirement and provide some primitives function of new Yeti DM architecuture. It is proposed in conclusion that a Fault-tolerant Distribtion Master Architecuture (FDMA) is worth of doing as an experiment and important property in Yeti’s future agenda.
+Return to the practice of Yeti Multi-DM, it received expected benefit due to its property of redundancy. However, root operation based on Multi-DM model exposed some issues as well. In a [Yeti blog post](http://yeti-dns.org/yeti/blog/2018/08/13/fault-tolerant-distribution-master-architecture.html), Yeti’s Multi-DM Architecture was revisited. It is inferred that a fault-tolerant property is desired for future Yeti DM architecture. Most specifically, a consensus should be achieved before any signed zone be published among a group of entities. The post introduces the requirement and provide some primitives function of new Yeti DM architecuture. It is proposed in conclusion that a Fault-tolerant Distribtion Master Architecuture (FDMA) is worth of doing as an important item in Yeti’s future research agenda.
 
 ##  Yeti DNS software as a deliverable
 
