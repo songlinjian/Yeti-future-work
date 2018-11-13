@@ -8,25 +8,17 @@ There are some working items for future work collected from Yeti sponors and par
 
 In previous work in Yeti, IPv6 large packet issue still exists and has impact on Yeti root in many aspects [section5.1.1 of RFC8483](https://tools.ietf.org/html/rfc8483#section-5.1.1). KSK rollover produces large response with additional KSKs. large number of root servers will generate large response during priming process. Moreover, Multi-DM structure also put requirement for stable transmition of large DNS response in IPv6. One promission apporach to resolve this issue is to enable resolver and root server use connection-oriented transport potocol like TCP or HTTP for DNS transaction which generates large DNS response. 
 
-There are two approaches:
-* DNS Transport over TCP [RFC7766] is a Mandatory for Yeti resolver. All Root server adopt [ATR](https://tools.ietf.org/html/draft-song-atr-large-resp-01) to generate a small truncated response in case of fragement dropped in the middle of the path.
-* Enable resolver send DNS queries over TCP or HTTP to allow large DNS response with any difficulty. There is one expired draft mentioned this idea: [song-dnsop-tcp-primingexchange](https://tools.ietf.org/html/draft-song-dnsop-tcp-primingexchange-00) 
+More study can be put on :
+* implementation and operation of DNS ATR in Yeti. We can ask Yeti resolver to support TCP [RFC7766] as a Mandatory requirment. All Root server adopt [ATR](https://tools.ietf.org/html/draft-song-atr-large-resp-02) to generate a small addtional truncated response in case of fragement dropped in the middle of the path. (Kato suggested implement and adopt ATR in a seperated thread or device on the path, using BPF for exmaple) 
+* Continue to explore DNS-layer framentation (draft-muks-dns-message-fragments) with implementaion and testing data.
 
-## Automatic Software Updates for DNS
+## Data resiliency and security of Root
 
-One aspect of Yeti experiments shows that it is difficult to trace the status of existing deployed DNS. It is also difficult to update the software to adopt new DNS functions and adapt to new configuration (renubmering of hint). For example, people find it is hard to estimate the readiness of RFC5011 and roll the KSK with more confidence. It is a real notable issue in IoT era, because large scale of IoT sub-resolvers are out of maiantance in very near future.
+Yeti DNS as a system model has shown the capacity of independence of the root system against surveillance risk and external Dependency.  However, some concerns may be still there on the security and resiliency of data in case of ICANN failure. Some people want to be sure that their data was independent of ICANN and/or the other. They also would like to have better data resiliency against some failures. There’s substantial technical work to be done to make this public accessible, scalable and automatic, for example improving the update process.
 
-Inspired by [IETF working group of Software Updates for Internet of Things (suit)](https://datatracker.ietf.org/group/suit/about/), it is intereting to explore and develop some techniques and solutions to allow DNS (expecially DNS resolver) update itself automatically. The Self-updating resolver is able to send status periodically to a centrolized entity (its implementor for exmaple), check the latest version, download the latest patch, configure and build the code with the patch automatically without breaking the servcies. Surely it can be enlabed and disabled by local configuration. 
+More generally, it is known that DNS is a tree based hierarchical database. Mathematically It has a root node and links between parent-child nodes, referred as to a typical DAG(Directed Acyclic Graph). So any failures and instability of parent nodes will impacts all their child nodes in case of human mistake, malicious attack or even earthquake. The risk of parent-child dependence is inherent in the nature of DNS. It has been  proposed to redefine Yeti as seeking to define technology and practices to allow any organization, from the smallest  company to nations to be self-sufficient in their DNS
 
-With that Self-updating property, it is expecyed that many issues around DNS software updating and rollover will be resolved,expecially in Root system level. 
-
-## Data security of Root 
-
-Yeti DNS as a system model has shown the capacity of independence of the root system against surveillance risk and external Dependency.  However, some concerns may be still there on the security and stability of data in case of ICANN failure. Some people want to be sure that their data was independent of ICANN and/or the other. Maybe RFC7706 is one example to start with. There’s substantial technical work to be done to make this public accessible, scalable and automatic, for example improving the update process.
-
-More generally, it is known that DNS is a tree based hierarchical database. Mathematically It has a root node and links between parent-child nodes, referred as to a typical DAG(Directed Acyclic Graph). So any failures and instability of parent nodes will impacts all their child nodes in case of human mistake, malicious attack or even earthquake. The risk of parent-child dependence is inherent in the nature of DNS. DLV (RFC4431) is one example to weaken the parent-child dependency in DNSSEC use case. But maybe more general case should be consider as well. 
-
-It has been  proposed to redefine Yeti as seeking to define technology and practices to allow any organization, from the smallest  company to nations to be self-sufficient in their DNS
+There are some related works on this field for reference. For exmaple, DLV (RFC4431) is one example to weaken the parent-child dependency in DNSSEC use case. RFC7706 provide a way to install a local root avoid the dependancy of Root sever system. And draft-ietf-dnsop-serve-stale enables recursive resolvers to use stale DNS data to avoid outages when authoritative nameservers cannot be reached to refresh expired data.
 
 ## Fault-tolerant Distribution Master Achitecture
 
