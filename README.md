@@ -31,3 +31,5 @@ Return to the practice of Yeti Multi-DM, it received expected benefit due to its
 
 Besides the interesting research items with deliverables like technical report, presentations, IETF document, it is desired that Yeti DNS Project can finally deliver some useful tools and open source DNS software which implement new functions deployed and tested in Yeti testbed. 
 
+It is suggested new functions or protocol proposed in Yeti project should be firstly put in a IETF draft format. Peer reviews and Comments from technical community are important. When it is ready with enough consensus in Yeti community, resource are to be collected and put on the implemenation and experiment.
+
