@@ -21,11 +21,11 @@ More generally, it is known that DNS is a tree based hierarchical database. Math
 
 There are some related works on this field for reference. For example, DLV (RFC4431) is one example to weaken the parent-child dependency in DNSSEC use case. RFC7706 provide a way to install a local root to reduce the dependency of Root sever system. And draft-ietf-dnsop-serve-stale enables recursive resolvers to use stale DNS data to avoid outages when authoritative nameservers cannot be reached to refresh expired data.
 
-## Fault-tolerant Distribution Master Architecture (Distributed DNSSEC)
+## Fault-tolerant Distributed Root (Distributed DNSSEC)
 
 In RFC8483 it is proposed that it would be interesting to test some technical tools like blockchain to either remove the technical requirement for a central authority over the root or enhance the security and stability of the existing Root.
 
-Return to the practice of Yeti Multi-DM, it received expected benefit due to its property of redundancy. However, root operation based on Multi-DM model exposed some issues as well. In a [Yeti blog post](http://yeti-dns.org/yeti/blog/2018/08/13/fault-tolerant-distribution-master-architecture.html), Yeti’s Multi-DM Architecture was revisited. It is inferred that a fault-tolerant property is desired for future Yeti DM architecture. Most specifically, a consensus should be achieved before any signed zone be published among a group of entities. The post introduces the requirement and provide some primitives function of new Yeti DM architecture. It is proposed in conclusion that a Fault-tolerant Distribution Master Architecture (FDMA) is worth of doing as an important item in Yeti’s future research agenda.
+Return to the practice of Yeti Multi-DM, it received expected benefit due to its property of redundancy. However, root operation based on Multi-DM model exposed some issues as well. In a [Yeti blog post](http://yeti-dns.org/yeti/blog/2018/08/13/fault-tolerant-distribution-master-architecture.html), Yeti’s Multi-DM Architecture was revisited. It is inferred that a fault-tolerant property is desired for future Root architecture. Most specifically, a consensus should be achieved before any signed zone be published among a group of entities. It is proposed that a Fault-tolerant Distribution Master Architecture (FDMA) or Distributed Root (DR) is worth of doing as an important direction in Yeti’s future research agenda.
 
 ##  Yeti DNS software as a deliverable
 
