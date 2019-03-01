@@ -8,10 +8,10 @@ There are some working items for future work collected from Yeti sponsors and pa
 
 In previous work in Yeti, IPv6 large packet issue still exists and has impact on Yeti root in many aspects [section5.1.1 of RFC8483](https://tools.ietf.org/html/rfc8483#section-5.1.1). KSK rollover produces large response with additional KSKs. large number of root servers will generate large response during priming process. Moreover, Multi-DM structure also requires stable transmission of large DNS response in IPv6. 
 
-More study can be put on :
-* implementation and operation of DNS ATR in Yeti. We can ask Yeti resolver to support TCP [RFC7766] as a Mandatory requirement. All Root server adopt [ATR](https://tools.ietf.org/html/draft-song-atr-large-resp-02) to generate a small additional truncated response in case of fragment dropped in the middle of the path. (Kato suggested implement and adopt ATR in a separate thread or device on the path, using BPF for example) 
-* Continue to explore DNS-layer fragmentation (draft-muks-dns-message-fragments) with implementation and testing data.
-* Try connection-oriented transport protocol like TCP for DNS transaction which generates large DNS response. 
+Genearally there two approaches for this issue :
+* Fall back later or sooner to TCP on eight server side or client side. For resolver it is to set EDNS0 bufsize below a certain number
+Server. For authoritative servers it is to set their maximum UDP response size small enough.
+* Reduce the size of DNS response by using ECC (even try CSK-Combined Signing Key) for DNSSEC 
 
 ## Data resiliency and security of Root
 
