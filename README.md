@@ -9,7 +9,7 @@ There are some working items for future work collected from Yeti sponsors and pa
 In previous work in Yeti, IPv6 large packet issue still exists and has impact on Yeti root in many aspects [section5.1.1 of RFC8483](https://tools.ietf.org/html/rfc8483#section-5.1.1). KSK rollover produces large response with additional KSKs. large number of root servers will generate large response during priming process. Moreover, Multi-DM structure also requires stable transmission of large DNS response in IPv6. 
 
 Genearally there two approaches for this issue :
-* Fall back later or sooner to TCP on eight server side or client side. For resolver it is to set EDNS0 bufsize below a certain number
+* Fall back later or sooner to TCP on either server side or client side. For resolver it is to set EDNS0 bufsize below a certain number
 Server. For authoritative servers it is to set their maximum UDP response size small enough.
 * Reduce the size of DNS response by using ECC (even try CSK-Combined Signing Key) for DNSSEC 
 
